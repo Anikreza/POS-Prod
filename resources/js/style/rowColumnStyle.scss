@@ -1,0 +1,99 @@
+@import "variables";
+@import "mixin";
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: .1vw;
+    min-width: 56vw;
+    @media screen and (max-width: $bp-mobile) {
+        grid-template-columns: auto;
+    }
+
+    @media screen and (max-width: $bp-laptop) {
+        grid-template-columns: auto auto;
+        margin-left: 50px;
+    }
+    @media screen and (max-width: $bp-mediumDesktop) {
+        margin-left: -.9rem;
+    }
+
+    @media screen and (max-width: $bp-largeDesktop) {
+        margin-left: .9rem;
+
+    }
+
+    .paginate {
+        @include paginationStyle($theme, $body-bg1);
+    }
+
+}
+
+.grid-container-admin {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 6%;
+    max-height: 53vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    @media screen and (max-width: $bp-mobile) {
+        grid-template-columns: auto;
+    }
+
+    @media screen and (max-width: $bp-laptop) {
+        grid-template-columns: auto auto;
+        margin-left: 50px;
+    }
+    @media screen and (max-width: $bp-mediumDesktop) {
+        margin-left: .9rem;
+    }
+
+    @media screen and (max-width: $bp-largeDesktop) {
+        margin-left: .9rem;
+    }
+
+    .paginate {
+        @include paginationStyle($theme, $body-bg1);
+        margin-left: 40%;
+        width: 40%;
+        bottom: 5%;
+        padding: 5px;
+    }
+}
+
+.grid-container-admin::-webkit-scrollbar {
+    display: none;
+}
+
+.pageNumber {
+    background-color: (rgb(234,124,105,.8));
+    color: $body-bg1;
+    border-radius: 8px;
+    padding: 5px;
+
+}
+
+.activeCLass {
+    color: (rgb(80,209,170,.8));
+    border-radius: 8px;
+}
+
+.prevClass {
+    color: (rgb(255,255,255,.4));
+    //color: $body-bg1;
+    border-radius: 5px;
+}
+.addDish {
+    width: 15vw;
+    margin: 5%;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: dashed;
+    border-color: $darkTheme;
+    cursor: pointer;
+
+    :hover {
+        color: $appWhite;
+        font-size: 103%;
+    }
+}

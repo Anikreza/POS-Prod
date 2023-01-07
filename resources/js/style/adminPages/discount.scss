@@ -1,0 +1,119 @@
+@import "../../style/variables";
+@import "../../style/mixin";
+
+
+.discount {
+    height: 100vh;
+    background-color: $body-bg2;
+    padding: 2vw;
+    @include flexEvenly;
+
+    h1 {
+        color: $secondaryColor;
+        font-size: 2vw;
+        font-weight: 100;
+        margin-bottom: 1vh;
+    }
+
+    .discountContainer {
+        margin: 7vw 0 0 7vw;
+        padding: 5vw;
+        background-color: $body-bg1;
+        width: 40vw;
+        height: 50vh;
+        border-radius: 1vw 5vw 1vw 1vw;
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            input,select {
+                background-color: rgba(#9288E0FF,.1);
+                color: $offWhite;
+                border-style: none;
+                padding: 1vw;
+                border-radius: 1vw;
+                margin-top: 1rem;
+            }
+            .enabled{
+                background-color: #475e42;
+                cursor: pointer;
+            }
+            .disabled{
+                opacity: .8;
+                cursor: none;
+            }
+
+            button {
+                padding: 1vw;
+                border-radius: 1vw;
+                margin-top: 1rem;
+                background-color: #475e42;
+            }
+
+            p {
+                color: $theme;
+            }
+        }
+    }
+
+    .pastDiscounts {
+        width: 30vw;
+        height: 80vh;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow-y: scroll;
+        background-color: $body-bg1;
+        border-radius: 1vw 1vw 1vw 5vw;
+        padding: 2vw;
+
+        .discountInfo {
+            padding: 2vh 0 0 0;
+
+            form {
+                text-align: center;
+
+                select {
+                    margin-right: 3vw;
+                    width: 8vw;
+
+                    option {
+                        background-color: $body-bg1;
+                        color: $offWhite;
+                    }
+                }
+            }
+
+        }
+
+        h2 {
+            font-size: 1.5vw;
+            color: $pasteColor;
+        }
+
+        p {
+            color: $secondaryColor;
+            font-size: 1.5vw;
+        }
+
+        .red {
+            background-color: $darkTheme;
+
+        }
+
+        .green {
+            background-color: #475e42;
+        }
+
+    }
+
+    .pastDiscounts::-webkit-scrollbar {
+        display: none;
+    }
+
+    hr {
+        height: 1px;
+        background-color: $body-bg2;
+        border: none;
+    }
+}

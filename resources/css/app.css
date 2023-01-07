@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 .toggleDarkBtn {
+    margin-left: 10px;
     position: relative;
     display: inline-block;
     width: 65px;
@@ -20,7 +21,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(255, 198, 173);
+    background-color: rgb(225, 225, 225);
     -webkit-transition: 0.5s;
     transition: 0.5s;
 }

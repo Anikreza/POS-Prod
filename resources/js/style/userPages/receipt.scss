@@ -1,0 +1,43 @@
+@import "../../style/variables";
+@import "../../style/mixin";
+
+    .receiptBox {
+        padding: 1rem;
+        background-color: $body-bg1;
+        box-shadow: 1px 2px 2px 1px $darkTheme;
+        min-height: 50vh;
+        max-height: fit-content;
+
+        .products {
+            height: fit-content;
+        }
+
+        p {
+            color: $theme;
+            font-size: 1.3em;
+        }
+        h2{
+            color: $pasteColor;
+            font-size: 1.3em;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            list-style: none;
+            text-align: left;
+            padding: .5em;
+            font-size: 1.1em;
+            font-weight: lighter;
+            color: $secondaryColor;
+
+            .index{
+                font-size: 1.1em;
+                color: $appWhite;
+            }
+            .quantity{
+                font-size: 1.1em;
+                color: $theme;
+            }
+        }
+    }
+

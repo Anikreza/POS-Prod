@@ -1,0 +1,97 @@
+@import "resources/js/style/variables";
+@import "resources/js/style/mixin";
+.checkbox{
+    width: 30vw;
+    margin: 5rem;
+    .checkboxItem{
+        padding: 1rem;
+        color: $theme;
+        font-size: 1.5rem;
+    }
+}
+.openButton{
+    //background-color:inherit;
+    background-color: rgba(#9288E0FF,.1);
+    cursor: pointer;
+    width: 96%;
+    font-size: 1.2rem;
+    margin-left: 2%;
+    color: $offWhite;
+}
+.add-page {
+    margin: 5% 0 0 0;
+    text-align: center;
+    min-height: 85vh;
+    max-height: fit-content;
+
+    h1 {
+        color: $appWhite;
+        font-size: 2vw;
+        margin-bottom: 1vh;
+
+        span{
+            color: $theme;
+            font-size: 1.8vw;
+        }
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 20px;
+        width: auto;
+        align-items: center;
+
+        textarea{
+            resize: none;
+            min-height: 100px;
+            overflow-y: scroll;
+            background-color: rgba(#9288E0FF,.1);
+        }
+
+        .select {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: rgba(#9288E0FF,.1);
+            color: $appWhite;
+            border-style: none;
+        }
+
+        .input, .auto_height {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(#9288E0FF,.1);
+            color: $appWhite;
+            border-style: none;
+            border-radius: 8px;
+        }
+
+        .input_red, .auto_height_red {
+            border-radius: 8px;
+            margin: 10px;
+            height: 8%;
+            padding: 10px;
+            background-color: $appWhite;
+            font-weight: 700;
+            color: red;
+            border-color: red;
+        }
+
+        .select_red {
+            width: 240px;
+            margin: 10px;
+            padding: 10px;
+            background-color: $appWhite;
+            font-weight: 700;
+            color: red;
+            border-color: red;
+        }
+    }
+
+    .addedDoneMessage {
+        margin-top: 20px;
+        font-size: 20px;
+        color: $theme;
+    }
+}

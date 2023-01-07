@@ -1,78 +1,151 @@
 export const initialState = {
+    basket: [],
     user: {},
-    addEmployeeModal:false,
-    approvalModal:false,
-    sendReqModal:false,
-    resolved:null,
-    sendReqDone:false,
-    approve:false,
-    pageNumber:1,
-    loadSettings:false,
-    addEmployeeDone:false,
-    approveData:{},
-    reqData:{},
+    state: 0,
+    orderStatusFilter: false,
+    settingsAdminRoute:'/settings',
+    showNotification:false,
+    quantity: 1,
+    deliveryMethod: '',
+    table: 0,
+    filterDay: 'Today',
+    category: {title: 0},
+    query: 'all',
+    modal: false,
+    payMethod: 0,
+    orderNote: '',
+    theme: true
 };
+
+export const getBasketTotal = (basket) =>
+    basket?.reduce((amount, item) => (item.price * item.quantity) + amount, 0);
+
+export const getBasketDiscount = (basket) =>
+    basket?.reduce((amount, item) => (item.discount * item.quantity*item.price) + amount, 0);
+
 const reducer = (state, action) => {
+    console.log(action);
     switch (action.type) {
+        case "ADD_TO_BASKET":
+            return {
+                ...state,
+                basket: [action.item, ...state.basket],
+            };
+
+        case "INCREMENT_QUANTITY":
+            return {
+                ...state,
+                basket: state.basket.map(item => item.productId === action.id ? {
+                    ...item,
+                    quantity: action.value
+                } : item),
+            };
+
+        case "updateCart":
+            return {
+                ...state,
+                basket: state.basket.map(item => item.productId === action.id ? {
+                    ...item,
+                    deliveryMethod: action.method,
+                    tableID: action.tableId,
+                } : item),
+            };
+
+        case "setOrderNote":
+            return {
+                ...state,
+                basket: state.basket.map(item => item.productId === action.id ? {
+                    ...item,
+                    orderNote: action.note
+                } : item),
+            };
+
+        case 'EMPTY_BASKET':
+            return {
+                ...state,
+                basket: []
+            };
+
+        case "REMOVE_FROM_BASKET":
+            let newBasket = state.basket.filter(
+                (basketItem) => basketItem.productId !== action.id
+            );
+            return {
+                ...state,
+
+                basket: newBasket
+            }
         case "SET_USER":
             return {
                 ...state,
                 user: action.item
             }
-            case "SET_RESOLVED":
+        case "setCategory":
             return {
                 ...state,
-                resolved: action.item
+                category: action.item
             }
-            case "Set_ApprovalModal":
+
+        case "setState":
             return {
                 ...state,
-                approvalModal: action.item
+                state: action.item
             }
-            case "Set_EmployeeModal":
+            case "setSettingsAdminRoute":
             return {
                 ...state,
-                addEmployeeModal: action.item
+                settingsAdminRoute: action.item
             }
-            case "Set_SendReqModal":
+            case "setOrderStatusFilter":
             return {
                 ...state,
-                sendReqModal: action.item
+                orderStatusFilter: action.item
             }
-            case "Set_EmployeeSaved":
+            case "setShowNotification":
             return {
                 ...state,
-                addEmployeeDone: action.item
+                showNotification: action.item
             }
-            case "Set_Approved":
+        case "setQuantity":
             return {
                 ...state,
-                approve: action.item
+                quantity: action.value
             }
-            case "Set_SendReqDone":
+        case "SetDeliveryMethod":
             return {
                 ...state,
-                sendReqDone: action.item
+                deliveryMethod: action.item
             }
-            case "setApproveData":
+            case "setTable":
             return {
                 ...state,
-                approveData: action.item
+                table: action.item
             }
-            case "setReqData":
+        case "SetFilterMethod":
             return {
                 ...state,
-                reqData: action.item
+                filterDay: action.item
             }
-            case "setPageNumber":
+
+        case "SetModal":
             return {
                 ...state,
-                pageNumber: action.item
+                modal: action.item
             }
-            case "setLoadSettings":
+            case "SetTheme":
             return {
                 ...state,
-                loadSettings: action.item
+                theme: action.item
+            }
+        case "SetQuery":
+            return {
+                ...state,
+                query: action.query
+            }
+        case "SetPayMethod":
+            return {
+                ...state,
+                payMethod: action.item
             }
         default:
             return state;

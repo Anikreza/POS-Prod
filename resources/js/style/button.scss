@@ -1,0 +1,54 @@
+@import "../style/variables";
+@import "mixin";
+
+.addButton {
+    button {
+        margin-top: 50%;
+        padding: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        color: $theme;
+    }
+
+    p {
+        color: $theme;
+        font-size: 1vw;
+        margin-top: -5%;
+    }
+}
+
+.button {
+    text-align: center;
+
+    .button-glow {
+        @include button($theme,$appWhite);
+        cursor: pointer;
+    }
+
+    .button-dim {
+        @include button($body-bg1,$theme);
+        cursor: none;
+        opacity: .4;
+    }
+    .button-dim-enabled {
+        @include button($body-bg1,$theme);
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .button {
+
+        .button-glow {
+            padding: 6px;
+        }
+
+        .button-dim {
+            padding: 6px;
+        }
+
+    }
+
+}
