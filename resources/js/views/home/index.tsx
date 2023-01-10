@@ -1,12 +1,9 @@
-import React, {useState, useEffect} from "react";
-// @ts-ignore
+import React from "react";
 import AdminHome from "../../components/adminHome";
-// @ts-ignore
 import UserHome from "../../components/userHome";
 
-const Home = ({}) => {
-    // @ts-ignore
-    const user = JSON.parse(localStorage.getItem('user'));
+const Home = () => {
+    let user = JSON.parse(localStorage.getItem('user') || '{}');
     let role = user?.user.role;
 
     return (

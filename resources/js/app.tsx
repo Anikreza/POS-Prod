@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// @ts-ignore
 import reducer, {initialState} from "./states/reducer";
-// @ts-ignore
 import {StateProvider} from './states/StateProvider';
 import Index from "./Index";
 

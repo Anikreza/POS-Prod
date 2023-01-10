@@ -3,9 +3,7 @@ import React, {useCallback, useEffect, useState} from "react";
 import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import {toast, ToastContainer} from "react-toastify";
-// @ts-ignore
 import {useStateValue} from "./states/StateProvider";
-// @ts-ignore
 import Api from "./api/api";
 // @ts-ignore
 import NotFound from "./views/notFound";
@@ -13,31 +11,27 @@ import NotFound from "./views/notFound";
 import Register from "./views/forms/register";
 // @ts-ignore
 import Login from "./views/forms/login";
-// @ts-ignore
 import Home from "./views/home";
-// @ts-ignore
 import Sidebar from "./components/layouts/sidebar";
 
 function Index() {
 
-    const [{showNotification,theme}, dispatch] = useStateValue();
-    let user: any;
-    // @ts-ignore
-    user = JSON.parse(localStorage.getItem('user'));
+    const [{showNotification, theme}, dispatch]: any = useStateValue();
+    let user= JSON.parse(localStorage.getItem('user') || '{}');
     let admin = user?.admin;
 
     const getNotification = useCallback(
         async () => {
-            (admin)&&
+            (admin) &&
             await Api().get('/notification')
                 .then((res: { data: any[]; }) => {
                     res.data.map(notification => {
                         (showNotification) &&
                         toast.warning(notification.message, {
                             position: "bottom-left",
-                            closeOnClick:true,
-                            hideProgressBar:true,
-                            autoClose:100000000,
+                            closeOnClick: true,
+                            hideProgressBar: true,
+                            autoClose: 100000000,
                         });
                     })
                 })
@@ -51,8 +45,8 @@ function Index() {
     }, [getNotification]);
 
     return (
-        <div className={`${theme && 'dark text-white'}`}>
-            <div className="overflow-hidden min-h-screen bg-appWhite dark:bg-body2">
+        <div className={`${theme ? 'dark text-white' : 'text-black'}`}>
+            <div className="min-h-screen bg-appWhite dark:bg-body2">
                 <Router>
                     <Sidebar/>
                     <Routes>
