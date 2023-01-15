@@ -20,6 +20,10 @@ function Index() {
     let user= JSON.parse(localStorage.getItem('user') || '{}');
     let admin = user?.admin;
 
+    useEffect(() => {
+        localStorage.setItem('language','en')
+    }, []);
+
     const getNotification = useCallback(
         async () => {
             (admin) &&

@@ -18,13 +18,13 @@ module.exports = {
         colors: {
             'body':'#1F1D2B',
             'body2':'#2D303E',
-            'theme':'#EA7C69',
+            'theme':'#19b275',
             'appWhite':'#e1e1e1',
             'offWhite':'#a2a2a2',
             'secondary':'#9288E0',
             'paste':'#50D1AA',
             'border':'#2f2f2f',
-            'darkTheme':'#5b3836',
+            'darkTheme':'#10593b',
             'red':'#ee0c0c',
         },
         fontFamily: {

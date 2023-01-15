@@ -9,14 +9,14 @@ import React from 'react';
 const Routes = [
     {
         id: 1,
-        icon: <HomeIcon color={'#EA7C69'} width={'30'} height={'25'}/>,
+        icon: <HomeIcon color={'#19b275'} width={'30'} height={'25'}/>,
         activeIcon: <HomeIcon color={'white'} width={'30'} height={'25'}/>,
         path: '/',
         pathName: 'Home'
     },
     {
         id: 2,
-        icon: <DiscountIcon color={'#EA7C69'} width={'30'} height={'25'}/>,
+        icon: <DiscountIcon color={'#19b275'} width={'30'} height={'25'}/>,
         path: '/orders',
         activeIcon: <DiscountIcon color={'white'} width={'30'} height={'25'}/>,
         pathName: 'Orders'
@@ -24,14 +24,14 @@ const Routes = [
 
     {
         id: 4,
-        icon: <MessageIcon color={'#EA7C69'} width={'30'} height={'25'}/>,
+        icon: <MessageIcon color={'#19b275'} width={'30'} height={'25'}/>,
         path: '/Message',
         activeIcon: <MessageIcon color={'white'} width={'30'} height={'25'}/>,
         pathName: 'Message'
     },
     {
         id: 5,
-        icon: <NotificationIcon color={'#EA7C69'} width={'30'} height={'25'}/>,
+        icon: <NotificationIcon color={'#19b275'} width={'30'} height={'25'}/>,
         path: '/Notification',
         activeIcon: <NotificationIcon color={'white'} width={'30'} height={'25'}/>,
         pathName: 'Notification',
@@ -48,35 +48,35 @@ const AdminRoutes = [
     // },
     {
         id: 2,
-        icon: <DiscountIcon color={'#EA7C69'} width={'30'} height={'25'}/>,
+        icon: <DiscountIcon color={'#19b275'} width={'30'} height={'25'}/>,
         path: '/discount',
         activeIcon: <DiscountIcon color={'white'} width={'30'} height={'25'}/>,
         pathName: 'Discount'
     },
     {
         id: 3,
-        icon: <DashboardIcon color={'#EA7C69'} width={'30'} height={'25'}/>,
+        icon: <DashboardIcon color={'#19b275'} width={'30'} height={'25'}/>,
         path: '/dashboard',
         activeIcon: <DashboardIcon color={'white'} width={'30'} height={'25'}/>,
         pathName: 'Dashboard'
     },
     {
         id: 4,
-        icon: <MessageIcon color={'#EA7C69'} width={'30'} height={'25'}/>,
+        icon: <MessageIcon color={'#19b275'} width={'30'} height={'25'}/>,
         path: '/Message',
         activeIcon: <MessageIcon color={'white'} width={'30'} height={'25'}/>,
         pathName: 'Message'
     },
     {
         id: 5,
-        icon: <NotificationIcon color={'#EA7C69'} width={'30'} height={'25'}/>,
+        icon: <NotificationIcon color={'#19b275'} width={'30'} height={'25'}/>,
         path: '/Notification',
         activeIcon: <NotificationIcon color={'white'} width={'30'} height={'25'}/>,
         pathName: 'Notification',
     },
     {
         id: 6,
-        icon: <SettingsIcon color={'#EA7C69'} width={'30'} height={'25'}/>,
+        icon: <SettingsIcon color={'#19b275'} width={'30'} height={'25'}/>,
         path: '/settings',
         activeIcon: <SettingsIcon color={'white'} width={'30'} height={'25'}/>,
         pathName: 'Settings'

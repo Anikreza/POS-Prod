@@ -4,7 +4,7 @@ import UserHome from "../../components/userHome";
 
 const Home = () => {
     let user = JSON.parse(localStorage.getItem('user') || '{}');
-    let role = user?.user.role;
+    let role = user?.user?.role;
 
     return (
         <div>
